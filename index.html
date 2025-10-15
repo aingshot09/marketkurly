@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마켓컬리 클론</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <header class="header">
+    <!-- 1행 -->
+  <!-- 고객센터 드롭다운 -->
+  <div class="top-bar">
+    <ul>
+      <li>회원가입</li>
+      <li>로그인</li>
+      <li>
+        <select id="customer-service" onchange="location = this.value;">
+          <option value="#">고객센터</option>
+          <option value="#">공지사항</option>
+          <option value="#">자주하는 질문</option>
+          <option value="#">1:1 문의</option>
+          <option value="#">대량 주문 문의</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+
+
+    <!-- 2행 -->
+    <div class="middle-bar">
+      <div class="logo-menu">
+        <!-- data URI SVG 로고 -->
+        <img src="data:image/svg+xml,%3Csvg%20width%3D%2282%22%20height%3D%2242%22%20viewBox%3D%220%200%2082%2042%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%20%20%20%3Cg%20fill-rule%3D%22nonzero%22%20fill%3D%22none%22%3E%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M0%200h82v42H0z%22%2F%3E%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M62.5.965c1.026-.557%202.466-.718%203.356.107.89.825.676%202.048%200%203.973%200%200-1.505%204.066-3.055%208.262l-.398%201.08c-1.414%203.83-2.762%207.487-2.927%207.963-1.498%204.245%201.967%204.122%204.024-.152%201.159-2.394%202.644-6.357%202.644-6.357.524-1.563.682-2.504.359-2.828-.107-.113.045-.252.18-.323%202.269-1.149%204.63-.072%203.336%203.31l-.054.138c-.387.978-2.68%206.733-2.68%206.733-.676%201.66-.595%203.236.418%203.236.686-.004%201.46-.385%202.304-1.088%201.818-1.504%203.222-4.312%203.727-5.454.23-.508%201.087-2.42%201.766-4.361.236-.665.369-1.36.395-2.065a.443.443%200%200%201%20.194-.459%203.578%203.578%200%200%201%201.67-.42%201.805%201.805%200%200%201%201.465.705c.443.598.566%201.579.103%202.808-.12.32-3.775%209.958-3.775%209.958v.026c2.041-1.223%203.87-1.313%204.953-.854l-.003-.013c1.495.647%201.99%202.44.938%203.559-.103.11-.362.084-.362-.09-.094-1.253-2.517-3.495-6.109-1.075l-.145.385-1.068%202.808c-2.62%207.018-5.403%2012.136-9.415%2011-2.688-.76-2.377-4.607.515-7.79a54.9%2054.9%200%200%201%206.49-5.898c.068-.188.13-.35.188-.511.278-.78.491-1.434.792-2.265l.159-.518c-.178.2-.498.573-.712.812-.712.8-2.494%202.757-5.329%202.207l-.234-.052c-2.05-.508-2.608-1.986-2.655-3.277-2.142%202.656-4.351%203.426-5.807%203.39-1.948-.048-3.378-1.514-2.427-4.29%201.058-3.106%205.5-15.332%206.795-19%20.485-1.58.666-2.58.184-2.974-.123-.103.052-.265.2-.346zm8.364%2028.778c-1.103.88-5.526%204.53-6.752%207.441-.505%201.197-.376%202.149.488%202.233%201.96.194%204.012-3.818%206.228-9.512zM16.028%205.352c-.087.332-1.319%203.86-2.701%207.749l-.209.586-.21.589-.215.604c4.691-1.123%2013.064-6.57%2014.035-10.085.12-.161.29-.22.566-.035.495.33.686%201.155.495%201.918-.764%203.038-6.416%207.341-11.379%209.554.612%201.637%202.682%206.267%204.206%209.111%201.663%203.119%203.42%204.575%206.147%204.737%201.46.085%203.014-.447%203.893-1.22l.148-.14-.013.03c.194-.204.511.077.366.323a6.5%206.5%200%200%201-4.992%202.867c-6.345.427-8.774-3.87-13.304-14.494-.366.126-.809.288-1.255.45-.075.187-2.07%205.642-2.13%205.823-.944%202.87-1.005%204.442-.358%204.895.145.09.074.333-.178.414-2.527.796-4.853-.696-3.559-4.442%201.161-3.316%205.69-16.18%206.914-19.626.427-1.294.197-2.125-.492-2.306C8.506%201.78.877%208.749%201.971%2015.184c.19%201.12.98%201.747%201.378%201.663a.133.133%200%200%201%20.156.159%201.508%201.508%200%200%201-1.845%201.032C.49%2017.782.107%2016.527.043%2015.88-.601%209.22%206.148%201.23%2012.389.58c2.378-.25%204.61.96%203.64%204.772zm24.04%209.913-.06.207-2.83%208.16c-.304.85-.1%201.737.501%201.902%201.757.482%204.028-2.145%205.131-4.733a67.794%2067.794%200%200%200%201.476-3.815c.582-1.643%201.106-3.183.783-3.908-.075-.168.045-.256.223-.35.505-.255%202.226-.825%203.141.068.695.674.609%201.771-.03%203.437l-.096.242.22-.273c2.703-3.3%204.792-4.292%206.563-3.597l.147.062c2.381%201.074%201.146%205.215-2.116%205.48-.2.017-.356-.126-.158-.407.395-.605.356-1.909-.796-2.022-1.152-.113-2.83%201.207-4.038%202.844-1.084%201.45-2.2%203.911-3.322%207.273-.272.818-.143%201.012-.11%201.067a.1.1%200%200%201%200%20.094c-.143.272-.965.596-1.76.596-1.625-.007-2.291-.945-1.967-2.437-1.848%201.764-3.711%202.614-5.355%202.466a2.524%202.524%200%200%201-2.236-3.103c-1.426%201.809-3.542%203.268-5.697%203.067-2.155-.2-3.5-1.666-2.802-4.788.59-2.598%201.592-5.29%202.207-7.027.514-1.456.618-2.407.294-2.75-.103-.114.055-.25.194-.324%201.69-.886%204.394-.314%203.63%202.09-.802%202.527-2.255%206.49-2.55%207.4-.737%202.287-.29%203.523.755%203.58%201.045.06%202.43-.96%203.42-2.503%201.76-2.524%202.581-5.685%203.377-7.882.204-.56.527-1.866.185-2.352-.091-.123.067-.258.275-.372%201.537-.849%204.285-.64%203.402%202.608z%22%20fill%3D%22%235F0080%22%2F%3E%20%20%20%20%3C%2Fg%3E%3C%2Fsvg%3E" alt="마켓컬리 로고" class="logo-img">
+        
+        <div class="menu">
+          <span id="market" class="active">마켓컬리</span>
+          <span id="beauty">뷰티컬리</span>
+        </div>
+      </div>
+  
+    <div class="search">
+      <input type="text" placeholder="검색어를 입력해주세요">
+      <button type="button">
+        <img 
+          src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgzNnYzNkgweiIvPgogICAgICAgIDxnIHN0cm9rZT0iIzVGMDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjEuNyI+CiAgICAgICAgICAgIDxwYXRoIGQ9Im0yNi4wODEgMjYuMDgxLTQuMTItNC4xMk0xNi40NjcgMjMuMzM0YTYuODY3IDYuODY3IDAgMSAwIDAtMTMuNzM0IDYuODY3IDYuODY3IDAgMCAwIDAgMTMuNzM0eiIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" 
+          alt="돋보기" 
+          class="search-icon"
+        >
+      </button>
+    </div>
+    <div class="independent-icons">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTM2IDM2SDBWMGgzNnoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4LjcgNikiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjciPgogICAgICAgICAgICA8cGF0aCBkPSJNOS4zMDYgMjRTMCAxNi41NDQgMCA5LjMwNmE5LjMwNiA5LjMwNiAwIDAgMSAxOC42MTIgMEMxOC42MTIgMTYuNTQ0IDkuMzA2IDI0IDkuMzA2IDI0eiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgICAgICAgICAgIDxjaXJjbGUgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgY3g9IjkuMjEyIiBjeT0iOS4xMjMiIHI9IjIuNzg0Ii8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4K" alt="아이콘1">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0yOC45MjcgOC44OTNhNi40NiA2LjQ2IDAgMCAwLTkuMTM5IDBsLTEuODI5IDEuODI4LTEuODI3LTEuODI4YTYuNDYyIDYuNDYyIDAgMSAwLTkuMTQgOS4xMzhMOC44MiAxOS44Nmw4LjQzMiA4LjQzNGExIDEgMCAwIDAgMS40MTQgMGw4LjQzMy04LjQzNGgwbDEuODI4LTEuODI4YTYuNDYgNi40NiAwIDAgMCAwLTkuMTM4eiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNyIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==" alt="아이콘2">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzYiIGhlaWdodD0iMzYiIHZpZXdCb3g9IjAgMCAzNiAzNiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTM2IDM2SDBWMGgzNnoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg1LjE2NCA2LjU0NykiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjciPgogICAgICAgICAgICA8cGF0aCBkPSJtMjUuNjggMy42Ni0yLjcyIDExLjU3SDcuMzdMNC42NiAzLjY2eiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIyMC41MiIgY3k9IjIwLjc4IiByPSIyLjE0Ii8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjkuODEiIGN5PSIyMC43OCIgcj0iMi4xNCIvPgogICAgICAgICAgICA8cGF0aCBkPSJNMCAwaDMuOGwxLjc2IDcuNSIvPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+Cg==" alt="아이콘3">
+    </div>
+    
+
+    
+  
+      <div class="icons">
+        <i class="fas fa-map-marker-alt"></i>
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-shopping-cart"></i>
+      </div>
+    </div>
+
+
+
+    <!-- 3행 -->
+    <div class="bottom-bar">
+      <div class="category">
+        <i class="fas fa-bars"></i>
+        <span>카테고리</span>
+      </div>
+
+      <nav class="nav-menu">
+        <span>신상품</span>
+        <span>베스트</span>
+        <span>알뜰쇼핑</span>
+        <span>특가/혜택</span>
+      </nav>
+
+      <div class="delivery">
+        <button>샛별·하루 배송안내</button>
+      </div>
+    </div>
+  </header>
+  <div class="slider-container">
+  <div class="slider-wrapper">
+    <div class="slide">
+      <img src="img/image_1.png" alt="슬라이드1">
+    </div>
+    <div class="slide">
+      <img src="img/image_2.png" alt="슬라이드2">
+    </div>
+    <div class="slide">
+      <img src="img/image_3.png" alt="슬라이드3">
+    </div>
+  </div>
+
+  <!-- 이전/다음 버튼 -->
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
+
+  <!-- 인디케이터 -->
+  <div class="slider-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
